@@ -1,0 +1,16 @@
+---
+interface Props {
+    heading?: string
+    sub_heading?: string
+    headingClass?: string
+    subheadingClass?: string
+}
+
+const { heading, sub_heading, headingClass='', subheadingClass=''} = Astro.props;
+---
+<div class="container space-y-10">
+    { heading && <h2 class={`text-primary ${headingClass}`}> {heading} </h2>}
+    
+    {sub_heading && <p class={`text-secondary ${subheadingClass}`}> {sub_heading} </p>}
+    <slot />
+</div>

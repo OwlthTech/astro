@@ -1,0 +1,77 @@
+---
+interface Props {
+  postTitle: string;
+  postExcerpt?: string;
+  postImage: string;
+  postLink: string;
+  postAuthor?: string;
+  postDate?: string;
+  authorAvatar?: string;
+}
+
+const {
+  postTitle,
+  postExcerpt,
+  postImage,
+  postLink,
+  postAuthor = "Orgotel",
+  postDate,
+  authorAvatar,
+} = Astro.props;
+---
+
+<a
+  class="group hover:bg-prim-accent-dark/50 transition-colors sm:flex items-center p-3 border border-secondary/25 rounded-xl"
+  href={postLink}
+>
+  <div
+    class="flex-shrink-0 relative rounded-xl overflow-hidden group-hover:shadow-2xl transition-all duration-300 ease-in-out w-full h-[200px] sm:w-[250px] sm:h-[320px]"
+  >
+    <img
+      alt="Image Description"
+      class="absolute top-0 left-0 object-cover w-full h-full"
+      src={postImage}
+    />
+  </div>
+  <div class="grow h-full">
+    <div
+      class="flex flex-col justify-between h-full px-1 divide-y sm:p-6 divide-gray-200/10"
+    >
+      <div class="flex flex-col space-y-5">
+        <h3
+          class="text-xl text-secondary font-medium group-hover:text-secondary"
+        >
+          {postTitle}
+        </h3>
+        <p class="text-gray-600 text-base">
+          {postExcerpt}
+        </p>
+      </div>
+      <div class="">
+        <!-- Avatar -->
+        <div
+          class="flex items-center py-2 space-y-2 space-y-reverse opacity-70"
+        >
+          <div class="flex-shrink-0">
+            <img
+              alt="Image Description"
+              class="h-[2.875rem] w-[2.875rem] rounded-full group-hover:shadow-lg transition-all duration-300 ease-in-out"
+              src={authorAvatar
+                ? authorAvatar
+                : `https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=320&amp;h=320&amp;q=80`}
+            />
+          </div>
+          <div class="ml-2.5 sm:ml-4">
+            <h5 class="text-gray-800 group-hover:text-primary transition-all duration-300 ease-in-out">
+              {postAuthor}
+            </h5>
+            <p class="text-xs text-gray-500 group-hover:text-gray-800 transition-all duration-300 ease-in-out">
+              {postDate}
+            </p>
+          </div>
+        </div>
+        <!-- End Avatar -->
+      </div>
+    </div>
+  </div>
+</a>

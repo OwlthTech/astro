@@ -1,0 +1,51 @@
+---
+import type { CartItemDisplayInfo } from '../cartStore';
+import MainLayout from '../layouts/MainLayout.astro';
+import AddToCartForm from '../components/cart/AddToCartForm';
+import FigurineDescription from '../components/cart/FigurineDescription.astro';
+import Container from '../components/common/Container.astro';
+
+const products: CartItemDisplayInfo[] = [
+    {
+        id: '1',
+        name: 'Product 1',
+        imageSrc: 'https://picsum.photos/300/450',
+    },
+    {
+        id: '2',
+        name: 'Product 2',
+        imageSrc: 'https://picsum.photos/300/450',
+    }];
+---
+
+<MainLayout title="Products">
+	<Container>
+            <div class="product-layout">
+                {products.map((product) => (
+                    <div>
+                        <FigurineDescription />
+                        <AddToCartForm item={product} client:load>
+                            <button type="submit">Add to cart</button>
+                        </AddToCartForm>
+                    </div>
+                    <img src={product.imageSrc} alt={product.name} />
+                ))}
+            </div>
+	</Container>
+</MainLayout>
+<style>
+	.product-layout {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
+	}
+
+	.product-layout img {
+		width: 100%;
+		max-width: 26rem;
+	}
+
+	button[type='submit'] {
+		margin-block-start: 1rem;
+	}
+</style>

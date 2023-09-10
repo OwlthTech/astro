@@ -1,0 +1,58 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+
+import '../app/globals.css';
+
+import CartFlyout from '../components/cart/CartFlyout';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		
+		<Header />
+			<slot />
+		<Footer />
+		<CartFlyout client:load />
+		<script is:inline src="./node_modules/preline/dist/preline.js"></script>
+	
+	</body>
+</html>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: var(--content-max-width);
+	}
+
+	.product-layout {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
+	}
+
+	.product-layout img {
+		width: 100%;
+		max-width: 26rem;
+	}
+
+	button[type='submit'] {
+		margin-block-start: 1rem;
+	}
+</style>

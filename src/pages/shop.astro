@@ -1,0 +1,46 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Container from "../components/common/Container.astro";
+
+const response = await fetch(
+    "https://staging.orgotel.com/wp-json/wp/v2/product?per_page=100",
+);
+const products = await response.json();
+import AddToCartForm from "../components/cart/AddToCartForm";
+---
+
+<MainLayout title="Shop">
+    <Container>
+        <h1>Shop</h1>
+    </Container>
+
+    <Container>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {products.map((product: any) => (
+                <div class="grid-item">
+                    <ProductCard
+                        productName={product.title.rendered}
+                        productCategory="Natural Edibles"
+                        productThumbnail={product.featured_image_urls.medium_large[0]}
+                        productLink={`product/${product.slug}`}
+                        id={product.id}
+                    >
+                        <AddToCartForm
+                            item={{
+                                id: product.id,
+                                name: product.title.rendered,
+                                imageSrc: product.featured_image_urls.medium_large[0],
+                                quantity: 1, // You can set an initial quantity here
+                            }}
+                            client:load
+                        >
+                        <button class="invisible min-h-0 group-hover:min-h-auto text-xs text-transparent group-hover:text-white text-prim-accent-dark group-hover:visible transition-all duration-300 ease-in-out cursor-pointer" type="submit">Add to Cart</button>
+
+                        </AddToCartForm>
+                    </ProductCard>
+                </div>
+            ))}
+        </div>
+    </Container>
+</MainLayout>

@@ -1,0 +1,140 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+import ContainerHeading from '../components/common/ContainerHeading.astro';
+import HeroSection from '../components/homepage/HeroSection.astro';
+import UspCard from '../components/uspCard.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import ProductCard from '../components/ProductCard.astro';
+import BlogCard from '../components/BlogCard.astro';
+import SubscribeCTA from '../components/SubscribeCTA.astro';
+import FAQ from '../components/FAQ.astro';
+
+import '../app/globals.css';
+import Container from '../components/common/Container.astro';
+
+const FeaturedProducts = [
+    {
+        "productName": "Cold Pressed Groundnut Oil",
+        "productThumbnail": "https://picsum.photos/300/150",
+        "productCategory": "Edibles",
+        "productLink": "https://example.com/product/x"
+    },
+    {
+        "productName": "Coconut Oil",
+        "productThumbnail": "https://picsum.photos/300/150",
+        "productCategory": "Edibles",
+        "productLink": "https://example.com/product/pro"
+    },
+    {
+        "productName": "Mustard Oil",
+        "productThumbnail": "https://picsum.photos/300/150",
+        "productCategory": "Cosmetics",
+        "productLink": "https://example.com/product/watch"
+    },
+    {
+        "productName": "Sesame Oil",
+        "productThumbnail": "https://picsum.photos/300/150",
+        "productCategory": "Cosmetics",
+        "productLink": "https://example.com/product/espresso"
+    }
+]
+
+const Posts = [
+    {
+        "postTitle": "Benefits of Using Organic Skincare Products",
+        "postExcerpt": "Discover the numerous advantages of incorporating organic skincare products into your daily beauty routine.",
+        "postImage": "https://picsum.photos/seed/picsum/320/250?grayscale",
+        "postLink": "https://example.com/article/benefits-of-organic-skincare",
+        "postAuthor": "Orgotel",
+        "postDate": "2023-09-08",
+        "authorAvatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=320&amp;h=320&amp;q=80"
+    },
+    {
+        "postTitle": "Delicious Recipes with Organic Ingredients",
+        "postExcerpt": "Explore mouthwatering recipes made with fresh, organic ingredients that are not only tasty but also healthy.",
+        "postImage": "https://picsum.photos/seed/picsum/320/250?grayscale",
+        "postLink": "https://example.com/article/organic-recipes",
+        "postAuthor": "Orgotel",
+        "postDate": "2023-09-09",
+        "authorAvatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=320&amp;h=320&amp;q=80"
+    },
+    {
+        "postTitle": "Choosing the Right Organic Shampoo",
+        "postExcerpt": "Learn how to select the best organic shampoo for your hair type and contribute to a healthier environment.",
+        "postImage": "https://picsum.photos/seed/picsum/320/250?grayscale",
+        "postLink": "https://example.com/article/choosing-organic-shampoo",
+        "postAuthor": "Orgotel",
+        "postDate": "2023-09-10",
+        "authorAvatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=320&amp;h=320&amp;q=80"
+    },
+    {
+        "postTitle": "The Organic Food Revolution",
+        "postExcerpt": "Explore the growing popularity of organic food and its impact on health and sustainability.",
+        "postImage": "https://picsum.photos/seed/picsum/320/250?grayscale",
+        "postLink": "https://example.com/article/organic-food-revolution",
+        "postAuthor": "Orgotel",
+        "postDate": "2023-09-11",
+        "authorAvatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=320&amp;h=320&amp;q=80"
+    }
+]
+
+const Categories = [
+	{
+		"categoryShort": "Natural Edibles",
+		"categoryLong": "Cold Pressed Cooking Oils",
+		"categoryLink": "#",
+		"categorySubheading": "100% Wood Pressed",
+		"categoryImage": "https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1062&amp;q=80",
+		"categoryIcon": "https://images.unsplash.com/photo-1669837401587-f9a4cfe3126e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=320&amp;h=320&amp;q=80"
+	},
+	{
+		"categoryShort": "Herbal Cosmetics",
+		"categoryLong": "Chemical-free Cosmetics",
+		"categoryLink": "#",
+		"categorySubheading": "Backed by Ayurvedic Handmade Solutions",
+		"categoryImage": "https://images.unsplash.com/photo-1669828230990-9b8583a877ab?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1062&amp;q=80",
+		"categoryIcon": "https://images.unsplash.com/photo-1669837401587-f9a4cfe3126e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=320&amp;h=320&amp;q=80"
+	}
+]
+---
+
+<MainLayout title="Welcome to Astro.">
+	<HeroSection />
+
+	<Container>
+		<UspCard />	
+	</Container>
+
+	<ContainerHeading heading="Our Products" headingClass='text-center text-shadow-lg' sub_heading="All are natural and chemical free products" subheadingClass='text-center capitalize'>
+		<div class="grid lg:grid-cols-2 gap-6">
+			{Categories.map((category) => (
+				<CategoryCard categoryShort={category.categoryShort} categoryLong={category.categoryLong} categoryLink={category.categoryLink} categoryImage={category.categoryImage} categoryIcon={category.categoryIcon} categorySubheading={category.categorySubheading}
+				/>
+			))}
+		</div>
+	</ContainerHeading>
+	
+	<ContainerHeading heading="Featured Products" headingClass='text-center'>
+		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+			{FeaturedProducts.map((product) => (
+				<ProductCard productName={product.productName} productCategory={product.productCategory} productLink={product.productLink} productThumbnail={product.productThumbnail}
+				/>
+			))}
+		</div>
+	</ContainerHeading>
+	
+	<ContainerHeading heading="Know more about daily healthy things that matters" headingClass='text-center'>
+		<div class="grid gap-6 lg:grid-cols-2">
+			{Posts.map((post) => (
+				<BlogCard postTitle={post.postTitle} postExcerpt={post.postExcerpt} postLink={post.postLink} postImage={post.postImage} postAuthor={post.postAuthor} postDate={post.postDate}
+				/>
+			))}
+		</div>
+	</ContainerHeading>
+
+	<SubscribeCTA />
+	
+	<FAQ />
+</MainLayout>
+
