@@ -1,361 +1,413 @@
 ---
-import CartFlyoutToggle from '../../components/cart/CartFlyoutToggle';
+import CartFlyoutToggle from "../../components/cart/CartFlyoutToggle";
 ---
-<header
-    class="container sticky top-0 z-50 flex items-center w-full max-h-full py-3 text-sm md:justify-start md:flex-nowrap bg-white/30 backdrop-blur-lg md:py-0"
->
-    <nav aria-label="Global" class="w-full">
-        <div class="relative md:flex md:items-center md:justify-between">
-            <div class="flex items-center justify-between">
-                <a
-                    aria-label="Brand"
-                    class="flex-none font-semibold"
-                    href="/">
-                    <img src="/logo.svg" class="h-16 lg:h-20 py-3"/></a
-                >
-                <div class="md:hidden">
-                    <button
-                        aria-controls="navbar-collapse-with-animation"
-                        aria-label="Toggle navigation"
-                        class="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium text-gray-700 align-middle transition-all bg-white border rounded-md shadow-sm hs-collapse-toggle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-amber-700"
-                        data-hs-collapse="#navbar-collapse-with-animation"
-                        type="button"
-                    >
-                        <svg
-                            class="w-4 h-4 hs-collapse-open:hidden"
-                            fill="currentColor"
-                            height="16"
-                            viewbox="0 0 16 16"
-                            width="16"
-                        >
-                            <path
-                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-                                fill-rule="evenodd"></path>
-                        </svg>
-                        <svg
-                            class="hidden w-4 h-4 hs-collapse-open:block"
-                            fill="currentColor"
-                            height="16"
-                            viewbox="0 0 16 16"
-                            width="16"
-                        >
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                            >
-                            </path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div
-                class="hidden overflow-hidden transition-all duration-300 hs-collapse basis-full grow md:block"
-                id="navbar-collapse-with-animation"
-            >
-                <div
-                    class="overflow-hidden overflow-y-auto max-h-[92vh] scrollbar-y"
-                >
-                    <div
-                        class="flex flex-col mt-5 divide-y divide-gray-200 gap-x-0 divide-dashed md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:pl-7 md:divide-y-0 md:divide-solid"
-                    >
-                        <a
-                            aria-current="page"
-                            class="group transition duration-300 py-3 font-medium text-secondary md:py-6"
-                            href="/">Home
-                            <span class="block max-w-0 mx-auto group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-1"></span>
-                            </a
-                        >
-                        <a
-                            class="group transition duration-300 py-3 font-medium text-secondary md:py-6"
-                            href="/shop"
-                        >
-                            Shop
-                            <span class="block max-w-0 mx-auto group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-1"></span>
-                        </a>
-                        <div
-                            class="hs-dropdown [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:click] py-3 md:py-4"
-                        >
-                            <button
-                                class="inline items-center group transition duration-300 py-3 font-medium text-secondary md:py-6"
-                                type="button"
-                            >
-                                Products
-                                <svg
-                                    class="ml-2 w-2.5 h-2.5 text-primary inline"
-                                    fill="none"
-                                    height="16"
-                                    viewbox="0 0 16 16"
-                                    width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-width="2"></path>
-                                </svg>
-                                <span class="block max-w-0 mx-auto group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-1"></span>
-                            </button>
-                            <div
-                                class="hs-dropdown-menu transition-[opacity,margin,backdrop] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 bg-white backdrop-blur-md opacity-0 w-full hidden z-10 top-full left-0 min-w-[15rem] md:shadow-2xl rounded-lg py-2 md:p-4 mt-5 before:absolute before:-top-5 before:left-0 before:w-full before:h-5"
-                            >
-                                <div
-                                    class="gap-4 md:grid md:grid-cols-2 lg:grid-cols-3"
-                                >
-                                    <div class="flex flex-col mx-1 md:mx-0">
-                                        <a
-                                            class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
-                                            href="#"
-                                        >
-                                            <svg
-                                                class="flex-shrink-0 w-6 h-6 mt-1"
-                                                fill="currentColor"
-                                                height="16"
-                                                viewbox="0 0 16 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"
-                                                >
-                                                </path>
-                                            </svg>
-                                            <div class="grow">
-                                                <p
-                                                    class="font-medium text-primary/80 group-hover:text-primary"
-                                                >
-                                                    Support Docs
-                                                </p>
-                                            </div>
-                                        </a>
-                                        <a
-                                            class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
-                                            href="#"
-                                        >
-                                            <svg
-                                                class="flex-shrink-0 w-6 h-6 mt-1"
-                                                fill="currentColor"
-                                                height="16"
-                                                viewbox="0 0 16 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"
-                                                >
-                                                </path>
-                                            </svg>
-                                            <div class="grow">
-                                                <p
-                                                    class="font-medium text-primary/80 group-hover:text-primary"
-                                                >
-                                                    Integrations
-                                                </p>
-                                            </div>
-                                        </a>
-                                        <a
-                                            class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
-                                            href="#"
-                                        >
-                                            <svg
-                                                class="flex-shrink-0 w-6 h-6 mt-1"
-                                                fill="currentColor"
-                                                height="16"
-                                                viewbox="0 0 16 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9zM3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"
-                                                >
-                                                </path>
-                                                <path
-                                                    d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12z"
-                                                >
-                                                </path>
-                                            </svg>
-                                            <div class="grow">
-                                                <p
-                                                    class="font-medium text-primary/80 group-hover:text-primary"
-                                                >
-                                                    API Reference
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="flex flex-col mx-1 md:mx-0">
-                                        <a
-                                            class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
-                                            href="#"
-                                        >
-                                            <svg
-                                                class="flex-shrink-0 w-6 h-6 mt-1"
-                                                fill="currentColor"
-                                                height="16"
-                                                viewbox="0 0 16 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-                                                >
-                                                </path>
-                                                <path
-                                                    d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"
-                                                >
-                                                </path>
-                                            </svg>
-                                            <div class="grow">
-                                                <p
-                                                    class="font-medium text-primary/80 group-hover:text-primary"
-                                                >
-                                                    Help Center
-                                                </p>
-                                            </div>
-                                        </a>
-                                        <a
-                                            class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
-                                            href="#"
-                                        >
-                                            <svg
-                                                class="flex-shrink-0 w-6 h-6 mt-1"
-                                                fill="currentColor"
-                                                height="16"
-                                                viewbox="0 0 16 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"
-                                                >
-                                                </path>
-                                            </svg>
-                                            <div class="grow">
-                                                <p
-                                                    class="font-medium text-primary/80 group-hover:text-primary"
-                                                >
-                                                    Developer Hub
-                                                </p>
-                                            </div>
-                                        </a>
-                                        <a
-                                            class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
-                                            href="#"
-                                        >
-                                            <svg
-                                                class="flex-shrink-0 w-6 h-6 mt-1"
-                                                fill="currentColor"
-                                                height="16"
-                                                viewbox="0 0 16 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"
-                                                >
-                                                </path>
-                                            </svg>
-                                            <div class="grow">
-                                                <p
-                                                    class="font-medium group-hover:text-primary"
-                                                >
-                                                    Community Forum
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div
-                                        class="group flex flex-col p-4 rounded-lg mx-1 hover:bg-prim-accent-dark/25"
-                                    >
-                                        <span
-                                            class="text-sm font-semibold text-primary uppercase"
-                                            >Customer stories</span
-                                        >
-                                        <a
-                                            class="flex items-center mt-4 group gap-x-5"
-                                            href="#"
-                                        >
-                                            <img
-                                                alt="Image Description"
-                                                class="w-32 h-32 rounded-lg group-hover:shadow-2xl"
-                                                src="https://images.unsplash.com/photo-1648737967328-690548aec14f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=320&q=80"
-                                            />
-                                            <div class="grow">
-                                                <p class="text-gray-800">
-                                                    Preline Projects has proved
-                                                    to be most efficient cloud
-                                                    based project tracking and
-                                                    bug tracking tool.
-                                                </p>
-                                                <p
-                                                    class="inline-flex items-center mt-3 text-sm font-semibold text-primary gap-x-2"
-                                                >
-                                                    Learn more
-                                                    <svg
-                                                        class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1"
-                                                        fill="none"
-                                                        height="16"
-                                                        viewbox="0 0 16 16"
-                                                        width="16"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            clip-rule="evenodd"
-                                                            d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
-                                                            fill="currentColor"
-                                                            fill-rule="evenodd"
-                                                        ></path>
-                                                    </svg>
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <a
-                            class="group transition duration-300 py-3 font-medium text-secondary md:py-6"
-                            href="#"
-                        >
-                            Join us 
-                            <span class="block max-w-0 mx-auto group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-1"></span>
-                        </a>
-                        <div class="pt-3 pr-1 md:pt-0">
-                            <CartFlyoutToggle client:load />
-                            <!-- <a
-                                class="inline-flex justify-center items-center gap-x-2 text-center bg-prim-accent-dark hover:bg-primary border text-primary border-primary/50 hover:text-prim-accent-dark text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-white transition py-2.5 px-3"
-                                href="#"
-                            >
-                                <svg
-                                    class="w-4 h-4"
-                                    fill="currentColor"
-                                    height="16"
-                                    viewbox="0 0 16 16"
-                                    width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                                    >
-                                    </path>
-                                </svg>
-                                 Log in
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+<header
+  class="container sticky top-0 z-50 flex items-center w-full max-h-full py-3 text-sm md:justify-start md:flex-nowrap bg-white/30 backdrop-blur-lg md:py-0"
+>
+  <nav aria-label="Global" class="w-full">
+    <div class="relative md:flex md:items-center md:justify-between">
+      <div class="flex items-center justify-between">
+        <a aria-label="Brand" class="flex-none font-semibold" href="/">
+          <img src="/logo.svg" class="h-16 lg:h-20 py-3" /></a
+        >
+        <div class="md:hidden">
+          <button
+            aria-controls="navbar-collapse-with-animation"
+            aria-label="Toggle navigation"
+            class="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium text-gray-700 align-middle transition-all bg-white border rounded-md shadow-sm hs-collapse-toggle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-amber-700"
+            data-hs-collapse="#navbar-collapse-with-animation"
+            type="button"
+          >
+            <svg
+              class="w-4 h-4 hs-collapse-open:hidden"
+              fill="currentColor"
+              height="16"
+              viewbox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                fill-rule="evenodd"></path>
+            </svg>
+            <svg
+              class="hidden w-4 h-4 hs-collapse-open:block"
+              fill="currentColor"
+              height="16"
+              viewbox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+              >
+              </path>
+            </svg>
+          </button>
         </div>
-    </nav>
+      </div>
+      <div
+        class="hidden overflow-hidden transition-all duration-300 hs-collapse basis-full grow md:block"
+        id="navbar-collapse-with-animation"
+      >
+        <div class="overflow-hidden overflow-y-auto max-h-[92vh] scrollbar-y">
+          <div
+            class="flex flex-col mt-5 divide-y divide-gray-200 gap-x-0 divide-dashed md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:pl-7 md:divide-y-0 md:divide-solid"
+          >
+            <a
+              aria-current="page"
+              class="group transition duration-300 py-3 font-medium text-secondary md:py-6"
+              href="/"
+              >Home
+              <span
+                class="block max-w-0 mx-auto group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-1"
+              ></span>
+            </a>
+            <a
+              class="group transition duration-300 py-3 font-medium text-secondary md:py-6"
+              href="/shop"
+            >
+              Shop
+              <span
+                class="block max-w-0 mx-auto group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-1"
+              ></span>
+            </a>
+            <div
+              class="hs-dropdown [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:click] py-3 md:py-4"
+            >
+              <button
+                class="inline items-center group transition duration-300 font-medium text-secondary md:py-6"
+                type="button"
+              >
+                Products
+                <svg
+                  class="ml-2 w-2.5 h-2.5 text-primary inline"
+                  fill="none"
+                  height="16"
+                  viewbox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-width="2"></path>
+                </svg>
+                <span
+                  class="block max-w-0 mx-auto group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-1"
+                ></span>
+              </button>
+              <div
+                class="hs-dropdown-menu transition-[opacity,margin,backdrop] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 bg-white backdrop-blur-md opacity-0 w-full hidden z-10 top-full left-0 min-w-[15rem] md:shadow-2xl rounded-lg py-2 md:p-4 mt-5 before:absolute before:-top-5 before:left-0 before:w-full before:h-5"
+              >
+                <div class="gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+                  <div class="flex flex-col mx-1 md:mx-0">
+                    <a
+                      class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
+                      href="/product"
+                    >
+                      <svg
+                        class="flex-shrink-0 w-6 h-6 mt-1"
+                        fill="currentColor"
+                        height="16"
+                        viewbox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"
+                        >
+                        </path>
+                      </svg>
+                      <div class="grow">
+                        <p
+                          class="font-medium text-primary/80 group-hover:text-primary"
+                        >
+                          Single Product Page
+                        </p>
+                      </div>
+                    </a>
+                    <a
+                      class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
+                      href="/shop"
+                    >
+                      <svg
+                        class="flex-shrink-0 w-6 h-6 mt-1"
+                        fill="currentColor"
+                        height="16"
+                        viewbox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"
+                        >
+                        </path>
+                      </svg>
+                      <div class="grow">
+                        <p
+                          class="font-medium text-primary/80 group-hover:text-primary"
+                        >
+                          Shop Page 1
+                        </p>
+                      </div>
+                    </a>
+                    <a
+                      class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
+                      href="/shop2"
+                    >
+                      <svg
+                        class="flex-shrink-0 w-6 h-6 mt-1"
+                        fill="currentColor"
+                        height="16"
+                        viewbox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9zM3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"
+                        >
+                        </path>
+                        <path
+                          d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12z"
+                        >
+                        </path>
+                      </svg>
+                      <div class="grow">
+                        <p
+                          class="font-medium text-primary/80 group-hover:text-primary"
+                        >
+                          Shop Page 2
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="flex flex-col mx-1 md:mx-0">
+                    <a
+                      class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
+                      href="#"
+                    >
+                      <svg
+                        class="flex-shrink-0 w-6 h-6 mt-1"
+                        fill="currentColor"
+                        height="16"
+                        viewbox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                        >
+                        </path>
+                        <path
+                          d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"
+                        >
+                        </path>
+                      </svg>
+                      <div class="grow">
+                        <p
+                          class="font-medium text-primary/80 group-hover:text-primary"
+                        >
+                          Help Center
+                        </p>
+                      </div>
+                    </a>
+                    <a
+                      class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
+                      href="#"
+                    >
+                      <svg
+                        class="flex-shrink-0 w-6 h-6 mt-1"
+                        fill="currentColor"
+                        height="16"
+                        viewbox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"
+                        >
+                        </path>
+                      </svg>
+                      <div class="grow">
+                        <p
+                          class="font-medium text-primary/80 group-hover:text-primary"
+                        >
+                          Developer Hub
+                        </p>
+                      </div>
+                    </a>
+                    <a
+                      class="flex p-4 text-primary/80 items-center rounded-md group gap-x-5 hover:bg-prim-accent-dark/25 hover:text-primary"
+                      href="#"
+                    >
+                      <svg
+                        class="flex-shrink-0 w-6 h-6 mt-1"
+                        fill="currentColor"
+                        height="16"
+                        viewbox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"
+                        >
+                        </path>
+                      </svg>
+                      <div class="grow">
+                        <p class="font-medium group-hover:text-primary">
+                          Community Forum
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    class="group flex flex-col p-4 rounded-lg mx-1 hover:bg-prim-accent-dark/25"
+                  >
+                    <span class="text-sm font-semibold text-primary uppercase"
+                      >Customer stories</span
+                    >
+                    <a class="flex items-center mt-4 group gap-x-5" href="#">
+                      <img
+                        alt="Image Description"
+                        class="w-32 h-32 rounded-lg group-hover:shadow-2xl"
+                        src="https://images.unsplash.com/photo-1648737967328-690548aec14f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=320&q=80"
+                      />
+                      <div class="grow">
+                        <p class="text-gray-800">
+                          Preline Projects has proved to be most efficient cloud
+                          based project tracking and bug tracking tool.
+                        </p>
+                        <p
+                          class="inline-flex items-center mt-3 text-sm font-semibold text-primary gap-x-2"
+                        >
+                          Learn more
+                          <svg
+                            class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1"
+                            fill="none"
+                            height="16"
+                            viewbox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
+                              fill="currentColor"
+                              fill-rule="evenodd"></path>
+                          </svg>
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              class="group transition duration-300 py-3 font-medium text-secondary md:py-6"
+              href="#"
+            >
+              Join us
+              <span
+                class="block max-w-0 mx-auto group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary mt-1"
+              ></span>
+            </a>
+            <div class="pt-3 pr-1 md:pt-0">
+              <CartFlyoutToggle client:load />
+            </div>
+
+            <!-- Avatar -->
+            <div
+              class="hs-dropdown relative inline-flex [--placement:bottom-right] mr-3"
+            >
+              <button
+                id="hs-dropdown-with-header"
+                type="button"
+                class="hs-dropdown-toggle inline-flex flex-shrink-0 justify-center items-center gap-2 h-7 w-7 rounded-full font-medium bg-white text-gray-700 align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-prim-accent-dark transition-all text-xs"
+                ><img
+                  class="inline-block h-7 w-7 rounded-full ring-2 ring-white"
+                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                  alt="Image Description"
+                /></button
+              ><div
+                class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-[15rem] bg-white shadow-md rounded-lg p-2"
+                aria-labelledby="hs-dropdown-with-header"
+              >
+                <div
+                  class="py-3 px-5 -m-2 bg-prim-accent-dark/40 rounded-t-lg"
+                >
+                  <p class="text-xs text-primary/80">
+                    Signed in as
+                  </p><p
+                    class="text-sm font-semibold text-primary"
+                  >
+                    james@site.com
+                  </p>
+                </div><div class="mt-2 py-2 first:pt-0 last:pb-0">
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-primary hover:font-semibold hover:bg-prim-accent-dark/40"
+                    href="/my-account"
+                    ><svg
+                      class="flex-none"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      ><path
+                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"
+                      ></path></svg
+                    >
+                     Account Details
+                  </a><a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-primary hover:font-semibold hover:bg-prim-accent-dark/40"
+                    href="#"
+                    ><svg
+                      class="flex-none"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      ><path
+                        d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z"
+                      ></path><path
+                        d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"
+                      ></path></svg
+                    >
+                     Order Details
+                  </a>
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-primary hover:font-semibold hover:bg-prim-accent-dark/40"
+                    href="#"
+                    ><svg
+                      class="flex-none"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      ><path
+                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"
+                      ></path></svg
+                    >
+                     Support
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <style is:global>
-	:root {
-		--color-bg: hsl(17, 20%, 97%);
-		--color-bg-2: hsl(17, 20%, 94%);
-		--color-bg-3: hsl(17, 20%, 88%);
+  :root {
+    --color-bg: hsl(17, 20%, 97%);
+    --color-bg-2: hsl(17, 20%, 94%);
+    --color-bg-3: hsl(17, 20%, 88%);
 
-		--content-max-width: 90ch;
-		--nav-height: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-	}
+    --content-max-width: 90ch;
+    --nav-height: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  }
 </style>

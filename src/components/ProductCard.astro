@@ -13,32 +13,32 @@ const { id, productName, productThumbnail, productCategory, productLink } = Astr
 
 <a class="group relative block" href={productLink} title={id}>
   <div
-    class="flex flex-col h-full border border-gray-200 shadow-lg group-hover:shadow-2xl transition-all duration-300 ease-in-out rounded-xl"
+    class="flex h-full border border-gray-200 shadow-lg group-hover:shadow-2xl transition-all duration-300 ease-in-out rounded-xl"
   >
     <div
-      class="flex justify-center rounded-xl overflow-hidden items-center flex-shrink-0 relative w-full h-[450px] after:absolute after:w-full after:h-full after:bg-gradient-to-t after:from-secondary after:via-transparent group-hover:after:from-primary group-hover:after:via-prim-accent-dark/20 transition-all duration-300 ease-in-out after:-z-[1]"
+      class="flex flex-col rounded-xl overflow-hidden flex-shrink-0 relative w-full h-[450px] after:absolute after:w-full after:h-full after:bg-gradient-to-t after:from-secondary after:via-transparent group-hover:after:from-primary group-hover:after:via-prim-accent-dark/20 transition-all duration-300 ease-in-out after:-z-[1]"
     >
       <image
         src={productThumbnail}
         alt={productName}
-        class="h-full absolute top-0 group-hover:-top-5 transition-all duration-300 ease-in-out"
+        class="h-3/4 object-contain w-full"
       />
-    </div>
-    <div
-      class="absolute h-fit p-4 bottom-0 space-y-2 inset-x-0 z-10 text-center"
-    >
-      <span
-        class="block mb-1 text-xs transition-all border-b border-prim-accent-dark/25 group-hover:text-white duration-300 ease-in-out font-semibold uppercase text-prim-accent-dark"
+      <div
+        class="h-1/4 p-4 space-y-2 inset-x-0 z-10 text-center"
       >
-        {productCategory}
-      </span>
-      <h3
-        class="text-xl font-semibold group-hover:text-prim-accent-dark transition-all duration-300 ease-in-out text-white"
-      >
-        {productName}
-      </h3>
-      <slot />
-    </div>
+        <span
+          class="block relative mb-1 text-xs transition-all border-b border-prim-accent-dark/25 group-hover:text-white duration-300 ease-in-out font-semibold uppercase text-prim-accent-dark"
+        >
+          {productCategory}
+        </span>
+        <h3
+          class="text-xl font-semibold group-hover:text-prim-accent-dark transition-all duration-300 ease-in-out text-white"
+        >
+          {productName}
+        </h3>
+        <slot />
+      </div>
+  </div>
     <!-- <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
       <a
         class="w-1/2 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-bl-xl font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-amber-700 transition-all text-sm sm:p-4"

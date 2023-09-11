@@ -1,6 +1,7 @@
 import { useStore } from '@nanostores/preact';
 import { cartItems, isCartOpen } from '../../cartStore';
 import styles from '../cart/CartFlyout.module.css';
+import CartFlyoutToggle from './CartFlyoutToggle';
 
 export default function CartFlyout() {
 	const $isCartOpen = useStore(isCartOpen);
@@ -8,6 +9,7 @@ export default function CartFlyout() {
 
 	return (
 		<aside hidden={!$isCartOpen} className={styles.container}>
+			<CartFlyoutToggle />
 			{Object.values($cartItems).length ? (
 				<ul className={styles.list} role="list">
 					{Object.values($cartItems).map((cartItem) => (

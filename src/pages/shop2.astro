@@ -1,6 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import ProductCard from "../components/ProductCard.astro";
+import ProductCard from "../components/ProductCard2.astro";
 import Container from "../components/common/Container.astro";
 
 const response = await fetch(
@@ -35,7 +35,9 @@ import AddToCartForm from "../components/cart/AddToCartForm";
                             }}
                             client:load
                         >
-                        <button class="group-hover:min-h-auto text-xs text-transparent group-hover:text-white text-prim-accent-dark group-hover:visible transition-all duration-300 ease-in-out cursor-pointer" type="submit">Add to Cart</button>
+                        <button type="submit"
+						class="text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center">Add
+						to cart</button>
 
                         </AddToCartForm>
                     </ProductCard>

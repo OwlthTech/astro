@@ -7,6 +7,6 @@ import preact from "@astrojs/preact";
 export default defineConfig({
   output: 'server',
   integrations: [tailwind({
-    applyBaseStyles: false
+    // applyBaseStyles: false
   }), preact()]
 });
